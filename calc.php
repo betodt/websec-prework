@@ -119,39 +119,36 @@
      <?php
 
         // validate subtotal and tip
-        if (empty($subtotalError)) {
+        if (!empty($subtotal) && empty($subtotalError)) {
 
-          if (empty($customTipError)) {
+          if (!empty($tip) && empty($customTipError)) {
 
             $tip *= $subtotal;
-            $subtotal += $tip;
 
             echo '<div class="total">';
-            echo 'Tip: $'. number_format($tip, 2) . '<br>';
-            echo 'Total: $' . number_format($subtotal, 2);
+            echo '<span class="left">Subtotal:</span> <span class="right">$'. number_format($subtotal, 2) . '</span><br>';
+            echo '<span class="left">Tip:</span> <span class="right">+$'. number_format($tip, 2) . '</span><br>';
+            echo '<hr class="addBar">';
+            $subtotal += $tip;
+            echo '<span class="left">Total:</span> <span class="right">$' . number_format($subtotal, 2) . '</span><br>';
             echo "</div>";
 
             // check if split is valid
-            if (!empty($split) && $split > 1) {
+            if (!empty($split) && empty($splitError)) {
 
               $tip = $tip / $split;
               $subtotal = $subtotal / $split;
 
               echo '<div class="total">';
-              echo 'Tip: $'. number_format($tip, 2) . '<br>';
-              echo 'Total: $' . number_format($subtotal, 2);
+              echo '<span class="center">Split ' . $split . ' ways</span>';
+              echo '<span class="left">Tip per person:</span> <span class="right">$'. number_format($tip, 2) . '</span><br>';
+              echo '<span class="left">Total per person:</span> <span class="right">$' . number_format($subtotal, 2) . '</span><br>';
               echo "</div>";
 
-            } else {
-              echo "bad split";
             }
 
-          } else {
-            echo "bad tip";
           }
 
-        } else {
-          echo "bad subtotal";
         }
 
       ?>
