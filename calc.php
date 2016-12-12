@@ -62,7 +62,7 @@
         }
      ?>
 
-     <form method="post" onsubmit="formSubmit()" action="<?=$_SERVER['PHP_SELF']?>">
+     <form method="post" action="<?=$_SERVER['PHP_SELF']?>">
        <label for="subtotal">Subtotal: $</label>
        <input type="text" name="subtotal" value="<?php echo $subtotal; ?>" size="10">
        <?php
@@ -153,6 +153,7 @@
 
       ?>
    </div>
+   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
    <script src="script.js" charset="utf-8"></script>
  </body>
 </html>

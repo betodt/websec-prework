@@ -1,74 +1,72 @@
 html, body {
-  width: 100%;
-  height: auto;
-  padding: 0;
-  margin: 0;
-  background: beige;
-  font-family: "Helvetica", sans-serif;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    background: beige;
+    font-family: "Helvetica", sans-serif;
 }
 
 .container {
-  border: 1px solid black;
-  background: white;
-  margin: 10px auto;
-  padding: 10px;
-  box-shadow: 5px 5px 5px #888888;
+    border: 1px solid black;
+    background: white;
+    margin: 10px auto;
+    padding: 10px;
+    box-shadow: 5px 5px 5px #888888;
 }
 
 .container h1 {
-  text-align: center;
+    text-align: center;
 }
 
 .container form {
-  line-height: 2;
+    line-height: 2;
 }
 
 .error {
-  color: red;
+    color: red;
 }
 
 .total {
-  padding: 10px;
-  line-height: 1.5;
-  border-top: 1px solid black;
+    padding: 10px;
+    line-height: 1.5;
+    border-top: 1px solid black;
 }
 
 .center {
-  text-align: center;
-  display: block;
+    text-align: center;
+    display: block;
 }
 
 .left {
-  float: left;
+    float: left;
 }
 
 .right {
-  float: right;
+    float: right;
 }
 
 .addBar {
-  border: 1px solid black;
+    border: 1px solid black;
 }
 
 @media (max-width: 780px) {
-  .container {
-    width: 90%;
-    box-shadow: 0px 5px 5px #888888;
-  }
+    .container {
+        width: 90%;
+        box-shadow: 0px 5px 5px #888888;
+    }
 }
 
 @media (min-width: 781px) {
-  .container {
-    width: 60%;
-  }
-
-  .hide-on-large {
-    display: none;
-  }
-
-  .total {
-    width: 33%;
-    display: inline-block;
-    vertical-align: top;
-  }
+    .container {
+        width: 60%;
+    }
+    .hide-on-large {
+        display: none;
+    }
+    .total {
+        width: 33%;
+        display: inline-block;
+        vertical-align: top;
+    }
 }
