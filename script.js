@@ -4,16 +4,13 @@ function focusOther() {
 }
 
 // make call to get tip from php
-function getResult(e) {
+function getResult(e, fn) {
   var data = $('form').serializeArray();
 
   data.push({name:"submit", value:""});
 
   $('.container').load('calc.php .container > *', data, function() {
-    var textField = $('input[name=' + e.target.name + ']')[0];
-    var pos = e.target.value.length;
-    textField.focus();
-    textField.setSelectionRange(pos,pos);
+    if (typeof fn === 'function') fn();
     bindHandlers();
    });
 
@@ -27,7 +24,12 @@ function getResultAfterKeyUp() {
       window.clearTimeout(timeOut);
       timeOut = undefined;
     }
-    timeOut = window.setTimeout(getResult, 500, e);
+    timeOut = window.setTimeout(getResult, 500, e, function() {
+      var textField = $('input[name=' + e.target.name + ']')[0];
+      var pos = e.target.value.length;
+      textField.focus();
+      textField.setSelectionRange(pos,pos);
+     });
   };
 }
 
@@ -38,6 +40,7 @@ function bindHandlers() {
   // submit form when user stops typing for 500 ms
   var keyUpHandler = getResultAfterKeyUp();
   $("input[type='text']").keyup(function(e) { keyUpHandler(e); });
+  $("input[type='radio']").change(function(e) { getResult(e); });
 }
 
 // bind event handlers on load
