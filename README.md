@@ -32,7 +32,7 @@ Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-![Video Walkthrough](http://imgur.com/a/J5evR)
+![Video Walkthrough](http://i.imgur.com/iM1IMo1.gif "Video Walthrough")
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
